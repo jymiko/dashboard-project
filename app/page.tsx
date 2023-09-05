@@ -34,13 +34,13 @@ export default function Home() {
   const handleSubmit = () => {
     setIsLoading(true)
     if (validateEmail(email) && validatePassword(password)){
-      toast.success('Anda masuk sebagai ' + email, { duration: 2000 })
+      toast.success('Successfully login as ' + email, { duration: 2000 })
     } else if (validateEmail(email) === false && validatePassword(password)) {
-      toast.error('Format email yang anda masukkan salah', { duration: 2000 })
+      toast.error('Email is not valid', { duration: 2000 })
     } else if (validateEmail(email) && validatePassword(password) === false) {
-      toast.error('Password yang anda masukkan kurang dari 8 karakter', { duration: 2000 })
+      toast.error('Password is less than 8 character', { duration: 2000 })
     } else {
-      toast.error('Email atau password yang anda masukkan salah', { duration: 2000 })
+      toast.error('Email or password is invalid', { duration: 2000 })
     }
 
     setTimeout(() => {
